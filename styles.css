@@ -19,6 +19,7 @@ html {
 body {
   font-family: "Amatic SC", cursive;
   background-color: rgba(249, 247, 245, 0.799);
+  font-size: 1.8rem;
 }
 
 .main-container {
@@ -31,9 +32,13 @@ body {
   font-size: 4rem;
 }
 
-.bold-font {
+.labels {
   font-weight: 700;
-  font-size: 1.5rem;
+  margin: 0 15px;
+}
+
+#choices-container {
+  margin: 12px 0;
 }
 
 #score-heading {
@@ -66,4 +71,11 @@ body {
   height: 125px;
   width: 250px;
   fill: rgba(71, 214, 55, 0.943);
+}
+
+.computer-score {
+  margin-left: 50px;
+}
+.user-score {
+  margin-right: 50px;
 }

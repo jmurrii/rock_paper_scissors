@@ -10,24 +10,28 @@
   <body>
     <div class="main-container">
       <h1 id="main-title">Rock, Paper, Scissors</h1>
-      <div class="playerChoice">
+
+      <div id="choices-container">
         <div class="flex">
-          <p class="bold-font">Challenger:</p>
+          <p class="labels">Challenger:</p>
           <p id="userChoice"></p>
         </div>
         <div class="flex">
-          <p class="bold-font">Computer:</p>
+          <p class="labels">Computer:</p>
           <p id="computerChoice"></p>
         </div>
-        <div class="flex">
-          <p class="bold-font" id="winnerText"></p>
-          <p id="winner"></p>
-        </div>
       </div>
-      <div class="score">
+
+      <div id="winner-container" class="flex">
+        <p class="labels" id="winnerText"></p>
+        <p id="winner"></p>
+      </div>
+
+      <!-- change to id score-container -->
+      <div id="score-container">
         <h2 id="score-heading">Current_Score:</h2>
         <div class="flex">
-          <p id="score">User: 0 --- 0 :Computer</p>
+          <p id="score"><span>Challenger</span> 0 - 0 <span>Computer</span></p>
         </div>
       </div>
       <!--  icons           -->

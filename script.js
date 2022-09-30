@@ -98,8 +98,21 @@ function compare(user, computer) {
 
 
 function updateScore() {
-    console.log(`UserScore: ${userScore} - ${computerScore} ComputerScore`);
-    document.getElementById("score").innerText = `User :   ${userScore}  -  ${computerScore}   : Computer`;
+    console.log(`userScore: ${userScore} - ${computerScore} ComputerScore`);
+    document.getElementById("score").innerHTML = "<span id='user-score'>Challenger</span>" + userScore + " - " + computerScore + "<span id='computer-score'>Computer</span>";
+
+    const userScoreSpan = document.getElementById('user-score');
+    const computerScoreSpan = document.getElementById('computer-score');
+
+
+    if (userScore > computerScore) {
+        userScoreSpan.style.color = "rgba(71, 214, 55, 0.943)";
+    } else if (computerScore > userScore) {
+        computerScoreSpan.style.color = "rgba(71, 214, 55, 0.943)";
+    } else {
+        userScoreSpan.style.color = "black";
+        computerScoreSpan.style.color = "black";
+    }
 }
 
 function clear() {
@@ -111,16 +124,16 @@ function clear() {
 
 function gameLoop() {
     clear();
-    setTimeout(getComputerChoice, 2000);
+    setTimeout(getComputerChoice, 800);
     setTimeout(() => {
-        document.getElementById("winnerText").innerText = "And the Winner is:";
+        document.getElementById("winnerText").innerText = "And the Winner is:   ";
         console.log("And the Winner is:");
-    }, 3500);
+    }, 1800);
     setTimeout(() => {
         compare(userChoice, computerChoice);
-    }, 5000);
+    }, 2800);
 
-    setTimeout(updateScore, 6000);
+    setTimeout(updateScore, 3800);
 }
 
 
