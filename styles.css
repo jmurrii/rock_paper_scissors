@@ -73,9 +73,15 @@ body {
   fill: rgba(71, 214, 55, 0.943);
 }
 
-.computer-score {
+#user-score {
+  margin-right: 50px;
+}
+#user-score-span {
+  margin-right: 50px;
+}
+#computer-score {
   margin-left: 50px;
 }
-.user-score {
-  margin-right: 50px;
+#computer-score-span {
+  margin-left: 50px;
 }

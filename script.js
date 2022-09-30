@@ -36,17 +36,14 @@ setUserChoice();
 let userChoice;
 function userChoosesRock() {
     userChoice = choicesArray[0];
-    console.log("Challenger's choice is " + userChoice);
     return userChoice;
 }
 function userChoosesPaper() {
     userChoice = choicesArray[1];
-    console.log("Challenger's choice is " + userChoice);
     return userChoice;
 }
 function userChoosesScissors() {
     userChoice = choicesArray[2];
-    console.log("Challenger's choice is " + userChoice);
     return userChoice;
 }
 
@@ -56,7 +53,6 @@ function getComputerChoice() {
     let i = Math.floor(Math.random() * choicesArray.length);
 
     document.getElementById("computerChoice").innerText = choicesArray[i];
-    console.log('Computer\'s choice is ' + choicesArray[i]);
     computerChoice = choicesArray[i];
     return computerChoice;
 }
@@ -67,38 +63,31 @@ function compare(user, computer) {
 
     if (user === "ROCK" && computer === "PAPER") {
         document.getElementById("winner").innerText = "Computer Wins :(:(:( ";
-        console.log("Computer Wins :(:(:( ");
         computerScore += 1;
     } else if (user === "ROCK" && computer === "SCISSORS") {
         document.getElementById("winner").innerText = "You Win!!!!";
-        console.log("You Win!!!!");
         userScore += 1;
     } else if (user === "PAPER" && computer === "ROCK") {
         document.getElementById("winner").innerText = "You Win!!!!";
-        console.log("You Win!!!!");
         userScore += 1;
     } else if (user === "PAPER" && computer === "SCISSORS") {
         document.getElementById("winner").innerText = "Computer Wins :(:(:( ";
-        console.log("Computer Wins :(:(:( ");
         computerScore += 1;
     } else if (user === "SCISSORS" && computer === "ROCK") {
         document.getElementById("winner").innerText = "Computer Wins :(:(:( ";
-        console.log("Computer Wins :(:(:( ");
         computerScore += 1;
     } else if (user === "SCISSORS" && computer === "PAPER") {
         document.getElementById("winner").innerText = "You Win!!!!";
-        console.log("You Win!!!!");
         userScore += 1;
     } else {
         document.getElementById("winner").innerText = "It's a draw";
-        console.log("It's a draw");
     }
 
 }
 
 
 function updateScore() {
-    console.log(`userScore: ${userScore} - ${computerScore} ComputerScore`);
+
     document.getElementById("score").innerHTML = "<span id='user-score'>Challenger</span>" + userScore + " - " + computerScore + "<span id='computer-score'>Computer</span>";
 
     const userScoreSpan = document.getElementById('user-score');
@@ -127,16 +116,12 @@ function gameLoop() {
     setTimeout(getComputerChoice, 800);
     setTimeout(() => {
         document.getElementById("winnerText").innerText = "And the Winner is:   ";
-        console.log("And the Winner is:");
     }, 1800);
     setTimeout(() => {
         compare(userChoice, computerChoice);
     }, 2800);
-
     setTimeout(updateScore, 3800);
 }
-
-
 
 
 
