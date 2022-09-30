@@ -29,28 +29,33 @@ body {
   font-family: "Indie Flower", cursive;
   font-weight: 500;
   font-size: 4rem;
-  margin: 10px 0;
+}
+
+.bold-font {
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 #score-heading {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin: 40px 0;
+  margin-top: 30px;
 }
 
 #score {
   font-size: 4rem;
   font-weight: 400;
+  display: flex;
 }
 
-.icon-holder {
+.flex {
   display: flex;
   justify-content: center;
 }
 
 .icons {
-  height: 200px;
-  width: 400px;
+  height: 100px;
+  width: 200px;
   transform: rotate(20deg);
   fill: black;
   transition: ease-in-out 0.4s;
@@ -58,7 +63,7 @@ body {
 
 .icons:hover {
   transform: rotate(40deg);
-  height: 250px;
-  width: 450px;
+  height: 125px;
+  width: 250px;
   fill: rgba(71, 214, 55, 0.943);
 }

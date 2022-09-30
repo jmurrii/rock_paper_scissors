@@ -11,15 +11,27 @@
     <div class="main-container">
       <h1 id="main-title">Rock, Paper, Scissors</h1>
       <div class="playerChoice">
-        <p>Challenger:</p><span id="userChoice"></span></p>
-        <p>Computer:</p><span id="computerChoice"></span></p>
-        <p id="winnerText"></p><span id="winner"></span></p>
+        <div class="flex">
+          <p class="bold-font">Challenger:</p>
+          <p id="userChoice"></p>
+        </div>
+        <div class="flex">
+          <p class="bold-font">Computer:</p>
+          <p id="computerChoice"></p>
+        </div>
+        <div class="flex">
+          <p class="bold-font" id="winnerText"></p>
+          <p id="winner"></p>
+        </div>
       </div>
       <div class="score">
         <h2 id="score-heading">Current_Score:</h2>
-        <p id="score">User 0 --- 0 Computer</p>
+        <div class="flex">
+          <p id="score">User: 0 --- 0 :Computer</p>
+        </div>
       </div>
-      <div class="icon-holder">
+      <!--  icons           -->
+      <div class="flex">
         <div class="icons" id="rock">
           <svg
             version="1.1"
