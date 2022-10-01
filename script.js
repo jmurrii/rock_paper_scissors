@@ -59,6 +59,7 @@ function getComputerChoice() {
 
 
 
+
 function compare(user, computer) {
 
     if (user === "ROCK" && computer === "PAPER") {
@@ -94,14 +95,14 @@ function updateScore() {
     const computerScoreSpan = document.getElementById('computer-score');
 
 
-    return (userScore > computerScore) ?
-        userScoreSpan.style.color = "rgba(71, 214, 55, 0.943)"
-        : (computerScore > userScore) ?
-            computerScoreSpan.style.color = "rgba(71, 214, 55, 0.943)"
-            : (userScore == computerScore) ?
-                userScoreSpan.style.color = "black" :
-                computerScoreSpan.style.color = "black";
-
+    if (userScore > computerScore) {
+        userScoreSpan.style.color = "rgba(71, 214, 55, 0.943)" :
+    } else if (computerScore > userScore) {
+        computerScoreSpan.style.color = "rgba(71, 214, 55, 0.943)";
+    } else {
+        userScoreSpan.style.color = "black";
+        computerScoreSpan.style.color = "black";
+    }
 }
 
 function clear() {
