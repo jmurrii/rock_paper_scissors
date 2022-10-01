@@ -96,7 +96,7 @@ function updateScore() {
 
 
     if (userScore > computerScore) {
-        userScoreSpan.style.color = "rgba(71, 214, 55, 0.943)" :
+        userScoreSpan.style.color = "rgba(71, 214, 55, 0.943)";
     } else if (computerScore > userScore) {
         computerScoreSpan.style.color = "rgba(71, 214, 55, 0.943)";
     } else {
