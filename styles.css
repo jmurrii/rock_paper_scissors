@@ -30,6 +30,7 @@ body {
   font-family: "Indie Flower", cursive;
   font-weight: 500;
   font-size: 4rem;
+  margin-top: 15px;
 }
 
 .labels {
@@ -73,15 +74,12 @@ body {
   fill: rgba(71, 214, 55, 0.943);
 }
 
-#user-score {
-  margin-right: 50px;
-}
+#user-score,
 #user-score-span {
   margin-right: 50px;
 }
-#computer-score {
-  margin-left: 50px;
-}
+
+#computer-score,
 #computer-score-span {
   margin-left: 50px;
 }
