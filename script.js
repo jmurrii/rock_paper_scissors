@@ -1,54 +1,28 @@
-const choicesArray = ["ROCK", "PAPER", "SCISSORS"];
-let computerScore = 0;
-let userScore = 0;
-
-
-function setUserChoice() {
-
-    const rock = document.getElementById("rock");
-
-    rock.addEventListener("click", function () {
-        document.getElementById("userChoice").innerText = "ROCK";
-        userChoosesRock();
-        gameLoop();
-    })
-
-
-    const paper = document.getElementById("paper");
-
-    paper.addEventListener("click", function () {
-        document.getElementById("userChoice").innerText = "PAPER";
-        userChoosesPaper();
-        gameLoop();
-    })
-
-    const scissors = document.getElementById("scissors");
-
-    scissors.addEventListener("click", function () {
-        document.getElementById("userChoice").innerText = "SCISSORS";
-        userChoosesScissors();
-        gameLoop();
-    })
-};
-
-setUserChoice();
-
-let userChoice;
-function userChoosesRock() {
-    userChoice = choicesArray[0];
-    return userChoice;
-}
-function userChoosesPaper() {
-    userChoice = choicesArray[1];
-    return userChoice;
-}
-function userChoosesScissors() {
-    userChoice = choicesArray[2];
-    return userChoice;
-}
-
-
+const choicesArray = ["rock", "paper", "scissors"];
+let challengerChoice;
 let computerChoice;
+let challengerScore = 0;
+let computerScore = 0;
+const challengerPoints = document.getElementById('challengerPoints');
+const computerPoints = document.getElementById('computerPoints');
+challengerPoints.innerText = challengerScore;
+computerPoints.innerText = computerScore;
+
+setchallengerChoice();
+
+function setchallengerChoice() {
+    const icons = document.querySelectorAll('.icons');
+
+    icons.forEach((icon) => {
+        icon.addEventListener("click", function () {
+            challengerChoice = this.id;
+            document.getElementById("challengerChoice").innerText = challengerChoice;
+
+            gameLoop();
+        });
+    });
+}
+
 function getComputerChoice() {
     let i = Math.floor(Math.random() * choicesArray.length);
 
@@ -57,79 +31,63 @@ function getComputerChoice() {
     return computerChoice;
 }
 
+function compare(challenger, computer) {
 
-
-
-function compare(user, computer) {
-
-    if (user === "ROCK" && computer === "PAPER") {
+    if (challenger === "rock" && computer === "paper") {
         document.getElementById("winner").innerText = "Computer Wins :(:(:( ";
         computerScore += 1;
-    } else if (user === "ROCK" && computer === "SCISSORS") {
+    } else if (challenger === "rock" && computer === "scissors") {
         document.getElementById("winner").innerText = "You Win!!!!";
-        userScore += 1;
-    } else if (user === "PAPER" && computer === "ROCK") {
+        challengerScore += 1;
+    } else if (challenger === "paper" && computer === "rock") {
         document.getElementById("winner").innerText = "You Win!!!!";
-        userScore += 1;
-    } else if (user === "PAPER" && computer === "SCISSORS") {
+        challengerScore += 1;
+    } else if (challenger === "paper" && computer === "scissors") {
         document.getElementById("winner").innerText = "Computer Wins :(:(:( ";
         computerScore += 1;
-    } else if (user === "SCISSORS" && computer === "ROCK") {
+    } else if (challenger === "scissors" && computer === "rock") {
         document.getElementById("winner").innerText = "Computer Wins :(:(:( ";
         computerScore += 1;
-    } else if (user === "SCISSORS" && computer === "PAPER") {
+    } else if (challenger === "scissors" && computer === "paper") {
         document.getElementById("winner").innerText = "You Win!!!!";
-        userScore += 1;
+        challengerScore += 1;
     } else {
         document.getElementById("winner").innerText = "It's a draw";
     }
-
 }
-
-
-function updateScore() {
-
-    document.getElementById("score").innerHTML = "<span id='user-score'>Challenger</span>" + userScore + " - " + computerScore + "<span id='computer-score'>Computer</span>";
-
-    const userScoreSpan = document.getElementById('user-score');
-    const computerScoreSpan = document.getElementById('computer-score');
-
-
-    if (userScore > computerScore) {
-        userScoreSpan.style.color = "rgba(71, 214, 55, 0.943)";
-    } else if (computerScore > userScore) {
-        computerScoreSpan.style.color = "rgba(71, 214, 55, 0.943)";
-    } else {
-        userScoreSpan.style.color = "black";
-        computerScoreSpan.style.color = "black";
-    }
-}
-
-function clear() {
-    document.getElementById("computerChoice").innerText = "";
-    document.getElementById("winnerText").innerText = "";
-    document.getElementById("winner").innerText = "";
-}
-
 
 function gameLoop() {
-    clear();
+    clearResults();
     setTimeout(getComputerChoice, 800);
     setTimeout(() => {
         document.getElementById("winnerText").innerText = "And the Winner is:   ";
     }, 1800);
     setTimeout(() => {
-        compare(userChoice, computerChoice);
+        compare(challengerChoice, computerChoice);
     }, 2800);
     setTimeout(updateScore, 3800);
 }
 
+function clearResults() {
+    document.getElementById('computerChoice').innerText = "";
+    document.getElementById('winnerText').innerText = "";
+    document.getElementById('winner').innerText = "";
+}
 
+function updateScore() {
 
+    challengerPoints.innerText = challengerScore;
+    computerPoints.innerText = computerScore;
 
-
-
-
+    if (challengerScore > computerScore) {
+        document.getElementById('challengerScore').style.color = "rgba(71, 214, 55, 0.943)";
+    } else if (computerScore > challengerScore) {
+        document.getElementById('computerScore').style.color = "rgba(71, 214, 55, 0.943)";
+    } else {
+        document.getElementById('challengerScore').style.color = "black";
+        document.getElementById('computerScore').style.color = "black";
+    }
+}
 
 
 

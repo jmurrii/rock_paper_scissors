@@ -1,4 +1,3 @@
-/* ********** Import fonts *********** */
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
 
@@ -19,7 +18,7 @@ html {
 body {
   font-family: "Amatic SC", cursive;
   background-color: rgba(249, 247, 245, 0.799);
-  font-size: 1.8rem;
+  font-size: 2.2rem;
 }
 
 .main-container {
@@ -74,12 +73,17 @@ body {
   fill: rgba(71, 214, 55, 0.943);
 }
 
-#user-score,
-#user-score-span {
+.score-display {
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+#challengerScore,
+#challengerPoints {
   margin-right: 50px;
 }
 
-#computer-score,
-#computer-score-span {
+#computerScore,
+#computerPoints {
   margin-left: 50px;
 }

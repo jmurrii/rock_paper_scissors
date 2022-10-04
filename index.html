@@ -14,26 +14,27 @@
       <div id="choices-container">
         <div class="flex">
           <p class="labels">Challenger:</p>
-          <p id="userChoice"></p>
+          <p id="challengerChoice"></p>
         </div>
         <div class="flex">
           <p class="labels">Computer:</p>
-          <p id="computerChoice"></p>
+          <p class="results" id="computerChoice"></p>
         </div>
       </div>
 
       <div id="winner-container" class="flex">
-        <p class="labels" id="winnerText"></p>
-        <p id="winner"></p>
+        <p class="labels results" id="winnerText"></p>
+        <p class="results" id="winner"></p>
       </div>
 
       <div id="score-container">
         <h2 id="score-heading">Current_Score:</h2>
-        <div class="flex">
-          <p id="score">
-            <span id="user-score-span">Challenger</span> 0 - 0
-            <span id="computer-score-span">Computer</span>
-          </p>
+        <div class="score-display flex">
+          <span id="challengerScore">Challenger</span>
+          <div id="challengerPoints"></div>
+          -
+          <div id="computerPoints"></div>
+          <span id="computerScore">Computer</span>
         </div>
       </div>
 
